@@ -1,13 +1,13 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import Logo from "./components/logo";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Logo />
+        <Text style={styles.text}>1RM Calculator</Text>
       </View>
     );
   }
@@ -16,8 +16,13 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#1BBC9B",
+    alignItems: "center",
+    justifyContent: "center"
   },
+  text: {
+    fontSize: 24,
+    color: "white",
+    fontWeight: "bold"
+  }
 });
