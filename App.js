@@ -1,12 +1,18 @@
 import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 import Logo from "./components/logo";
+import Calculator from "./components/calculator";
 
 export default class App extends React.Component {
+  state = {
+    showCalculator: true
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Logo />
+        <Calculator />
         <Text style={styles.text}>1RM Calculator</Text>
       </View>
     );
