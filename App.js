@@ -9,9 +9,9 @@ export default class App extends React.Component {
     oneRM: 0
   };
 
-  setOneRM = value => {
+  setOneRM = (reps, weight) => {
     this.setState({
-      oneRM: value
+      oneRM: weight * (1 + reps / 30)
     });
   };
 

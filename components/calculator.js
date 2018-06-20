@@ -21,8 +21,10 @@ export default class Calculator extends React.Component {
   };
 
   oneRM = () => {
-    if (this.state.reps && this.state.weight) {
-      this.props.oneRM(69);
+    const reps = this.state.reps;
+    const weight = this.state.weight;
+    if (reps && weight) {
+      this.props.oneRM(reps, weight);
     }
   };
 
@@ -38,12 +40,12 @@ export default class Calculator extends React.Component {
         <TextInput
           value={this.state.reps}
           style={styles.textInput}
-          onTextChange={this.setReps}
+          onChangeText={text => this.setReps(text)}
         />
         <Text style={styles.label}>Reps</Text>
         <TextInput
           value={this.state.weight}
-          onTextChange={this.setWeight}
+          onChangeText={text => this.setWeight(text)}
           style={styles.textInput}
         />
         <Text style={styles.label}>Weight</Text>
