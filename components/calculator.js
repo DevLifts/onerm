@@ -26,6 +26,7 @@ export default class Calculator extends React.Component {
     }
   };
 
+  // TODO - add debounce to text inputs
   render() {
     return (
       <View
