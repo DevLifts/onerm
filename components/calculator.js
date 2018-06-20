@@ -38,15 +38,20 @@ export default class Calculator extends React.Component {
         }}
       >
         <TextInput
-          value={this.state.reps}
-          style={styles.textInput}
+          keyboardType="numeric"
           onChangeText={text => this.setReps(text)}
+          placeholder="3"
+          style={styles.textInput}
+          textAlign={"center"}
+          value={this.state.reps}
         />
         <Text style={styles.label}>Reps</Text>
         <TextInput
-          value={this.state.weight}
+          keyboardType="numeric"
           onChangeText={text => this.setWeight(text)}
           style={styles.textInput}
+          textAlign={"center"}
+          value={this.state.weight}
         />
         <Text style={styles.label}>Weight</Text>
       </View>
@@ -56,6 +61,7 @@ export default class Calculator extends React.Component {
 
 const styles = StyleSheet.create({
   textInput: {
+    fontSize: 24,
     padding: 5,
     width: 100,
     height: 50,
