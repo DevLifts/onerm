@@ -9,7 +9,7 @@ export default class Logo extends React.Component {
           style={{
             width: 170,
             height: 100,
-            marginBottom: 20
+            marginBottom: 35
           }}
           source={{ uri: "https://devlifts.io/images/dist/logo.png" }}
         />

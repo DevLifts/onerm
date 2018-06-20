@@ -5,15 +5,25 @@ import Calculator from "./components/calculator";
 
 export default class App extends React.Component {
   state = {
-    showCalculator: true
+    showCalculator: true,
+    oneRM: 0
+  };
+
+  setOneRM = value => {
+    this.setState({
+      oneRM: value
+    });
   };
 
   render() {
     return (
       <View style={styles.container}>
         <Logo />
-        <Calculator />
+        <Calculator oneRM={this.setOneRM} />
         <Text style={styles.text}>1RM Calculator</Text>
+        {this.state.oneRM && (
+          <Text style={styles.oneRM}>{this.state.oneRM}</Text>
+        )}
       </View>
     );
   }
@@ -30,5 +40,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "white",
     fontWeight: "bold"
+  },
+  oneRM: {
+    fontSize: 72,
+    marginTop: 20,
+    color: "white"
   }
 });
