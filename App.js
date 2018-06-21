@@ -1,14 +1,27 @@
 import React from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { KeyboardAvoidingView, StyleSheet, Text } from "react-native";
 import Logo from "./components/logo";
+import Calculator from "./components/calculator";
 
 export default class App extends React.Component {
+  state = {
+    oneRM: ""
+  };
+
+  setOneRM = (reps, weight) => {
+    this.setState({
+      oneRM: Math.round(weight * (1 + reps / 30))
+    });
+  };
+
   render() {
     return (
-      <View style={styles.container}>
+      <KeyboardAvoidingView style={styles.container} behavior="padding">
         <Logo />
+        <Calculator oneRM={this.setOneRM} />
+        <Text style={styles.oneRM}>{this.state.oneRM}</Text>
         <Text style={styles.text}>1RM Calculator</Text>
-      </View>
+      </KeyboardAvoidingView>
     );
   }
 }
@@ -24,5 +37,10 @@ const styles = StyleSheet.create({
     fontSize: 24,
     color: "white",
     fontWeight: "bold"
+  },
+  oneRM: {
+    fontSize: 72,
+    marginBottom: 20,
+    color: "white"
   }
 });
