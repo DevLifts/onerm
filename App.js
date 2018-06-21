@@ -5,7 +5,6 @@ import Calculator from "./components/calculator";
 
 export default class App extends React.Component {
   state = {
-    showCalculator: true,
     oneRM: ""
   };
 

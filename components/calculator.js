@@ -12,12 +12,16 @@ export default class Calculator extends React.Component {
 
   setReps = text => {
     this.setState({ reps: text });
-    this.oneRM();
+    setTimeout(() => {
+      this.oneRM();
+    }, 100);
   };
 
   setWeight = text => {
     this.setState({ weight: text });
-    this.oneRM();
+    setTimeout(() => {
+      this.oneRM();
+    }, 100);
   };
 
   oneRM = () => {
