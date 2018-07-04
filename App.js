@@ -2,6 +2,7 @@ import React from "react";
 import { KeyboardAvoidingView, StyleSheet, Text } from "react-native";
 import Logo from "./components/logo";
 import Calculator from "./components/calculator";
+import DismissKeyboardView from "./components/DismissKeyboardView";
 
 export default class App extends React.Component {
   state = {
@@ -16,12 +17,14 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container} behavior="padding">
-        <Logo />
-        <Calculator oneRM={this.setOneRM} />
-        <Text style={styles.oneRM}>{this.state.oneRM}</Text>
-        <Text style={styles.text}>1RM Calculator</Text>
-      </KeyboardAvoidingView>
+      <DismissKeyboardView>
+        <KeyboardAvoidingView style={styles.container} behavior="padding">
+          <Logo />
+          <Calculator oneRM={this.setOneRM} />
+          <Text style={styles.oneRM}>{this.state.oneRM}</Text>
+          <Text style={styles.text}>1RM Calculator</Text>
+        </KeyboardAvoidingView>
+      </DismissKeyboardView>
     );
   }
 }
