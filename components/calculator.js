@@ -1,7 +1,8 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
-export default class Calculator extends React.Component {
+class Calculator extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -77,3 +78,9 @@ const styles = StyleSheet.create({
     color: 'white'
   }
 });
+
+Calculator.propTypes = {
+  oneRM: PropTypes.func.isRequired
+};
+
+export default Calculator;
