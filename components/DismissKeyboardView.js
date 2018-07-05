@@ -1,5 +1,5 @@
 import React from 'react';
-import { Keyboard, View } from "react-native";
+import { Keyboard, View } from 'react-native';
 
 const handleUnhandledTouches = () => {
   Keyboard.dismiss();

@@ -1,12 +1,12 @@
-import React from "react";
-import { StyleSheet, Text, TextInput, View } from "react-native";
+import React from 'react';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default class Calculator extends React.Component {
   constructor() {
     super();
     this.state = {
-      reps: "",
-      weight: ""
+      reps: '',
+      weight: ''
     };
   }
 
@@ -37,8 +37,8 @@ export default class Calculator extends React.Component {
     return (
       <View
         style={{
-          alignItems: "center",
-          justifyContent: "center"
+          alignItems: 'center',
+          justifyContent: 'center'
         }}
       >
         <TextInput
@@ -46,7 +46,7 @@ export default class Calculator extends React.Component {
           onChangeText={text => this.setReps(text)}
           placeholder="3"
           style={styles.textInput}
-          textAlign={"center"}
+          textAlign={'center'}
           value={this.state.reps}
         />
         <Text style={styles.label}>Reps</Text>
@@ -54,7 +54,7 @@ export default class Calculator extends React.Component {
           keyboardType="numeric"
           onChangeText={text => this.setWeight(text)}
           style={styles.textInput}
-          textAlign={"center"}
+          textAlign={'center'}
           value={this.state.weight}
         />
         <Text style={styles.label}>Weight</Text>
@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
     padding: 5,
     width: 100,
     height: 50,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 5
   },
   label: {
     marginBottom: 15,
-    color: "white"
+    color: 'white'
   }
 });
