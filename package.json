@@ -16,7 +16,9 @@
     "eslint-plugin-promise": "^3.8.0",
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
+    "husky": "^0.14.3",
     "jest-expo": "~27.0.0",
+    "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
     "react-native-scripts": "1.14.0",
     "react-test-renderer": "16.3.1"
@@ -29,10 +31,14 @@
     "ios": "react-native-scripts ios",
     "test": "jest",
     "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+    "lint-fix": "eslint . --fix",
+    "precommit": "lint-staged"
   },
   "jest": {
     "preset": "jest-expo"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
   },
   "dependencies": {
     "expo": "^27.0.1",
