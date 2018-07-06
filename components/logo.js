@@ -1,5 +1,5 @@
-import React from "react";
-import { View, Image } from "react-native";
+import React from 'react';
+import { View, Image } from 'react-native';
 
 export default class Logo extends React.Component {
   render() {
@@ -11,7 +11,7 @@ export default class Logo extends React.Component {
             height: 100,
             marginBottom: 35
           }}
-          source={{ uri: "https://devlifts.io/images/dist/logo.png" }}
+          source={{ uri: 'https://devlifts.io/images/dist/logo.png' }}
         />
       </View>
     );

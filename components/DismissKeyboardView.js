@@ -1,5 +1,6 @@
 import React from 'react';
-import { Keyboard, View } from "react-native";
+import PropTypes from 'prop-types';
+import { Keyboard, View } from 'react-native';
 
 const handleUnhandledTouches = () => {
   Keyboard.dismiss();
@@ -11,5 +12,9 @@ const DismissKeyboardView = ({ children }) => (
     {children}
   </View>
 );
+
+DismissKeyboardView.propTypes = {
+  children: PropTypes.node.isRequired
+};
 
 export default DismissKeyboardView;

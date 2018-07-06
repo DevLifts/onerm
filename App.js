@@ -1,12 +1,12 @@
-import React from "react";
-import { KeyboardAvoidingView, StyleSheet, Text } from "react-native";
-import Logo from "./components/logo";
-import Calculator from "./components/calculator";
-import DismissKeyboardView from "./components/DismissKeyboardView";
+import React from 'react';
+import { KeyboardAvoidingView, StyleSheet, Text } from 'react-native';
+import Logo from './components/logo';
+import Calculator from './components/calculator';
+import DismissKeyboardView from './components/DismissKeyboardView';
 
 export default class App extends React.Component {
   state = {
-    oneRM: ""
+    oneRM: ''
   };
 
   setOneRM = (reps, weight) => {
@@ -32,18 +32,18 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#1BBC9B",
-    alignItems: "center",
-    justifyContent: "center"
+    backgroundColor: '#1BBC9B',
+    alignItems: 'center',
+    justifyContent: 'center'
   },
   text: {
     fontSize: 24,
-    color: "white",
-    fontWeight: "bold"
+    color: 'white',
+    fontWeight: 'bold'
   },
   oneRM: {
     fontSize: 72,
     marginBottom: 20,
-    color: "white"
+    color: 'white'
   }
 });
