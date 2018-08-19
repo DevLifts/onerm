@@ -3,13 +3,10 @@ import PropTypes from 'prop-types';
 import { StyleSheet, Text, TextInput, View } from 'react-native';
 
 class Calculator extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      reps: '',
-      weight: ''
-    };
-  }
+  state = {
+    reps: '',
+    weight: ''
+  };
 
   setReps = text => {
     this.setState({ reps: text });
