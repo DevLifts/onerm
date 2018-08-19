@@ -7,7 +7,7 @@ describe('Calculator', () => {
 
   const requiredProps = overrides => {
     const props = {
-      oneRM: () => {},
+      oneRM: jest.fn(),
       ...overrides
     };
 
