@@ -23,8 +23,7 @@ class Calculator extends React.Component {
   };
 
   oneRM = () => {
-    const reps = this.state.reps;
-    const weight = this.state.weight;
+    const { reps, weight } = this.state;
     if (reps && weight) {
       this.props.oneRM(reps, weight);
     }
