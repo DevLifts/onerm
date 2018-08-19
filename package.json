@@ -4,6 +4,9 @@
   "private": true,
   "devDependencies": {
     "babel-eslint": "^8.2.5",
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
+    "enzyme-to-json": "^3.3.4",
     "eslint": "4.19.1",
     "eslint-config-prettier": "^2.9.0",
     "eslint-config-semipretty": "3.0.0",
@@ -17,11 +20,13 @@
     "eslint-plugin-react": "^7.10.0",
     "eslint-plugin-standard": "^3.1.0",
     "husky": "^0.14.3",
-    "jest-expo": "~27.0.0",
+    "jest": "^23.5.0",
+    "jest-expo": "^29.0.0",
     "lint-staged": "^7.2.0",
     "prettier": "^1.13.7",
+    "react-dom": "^16.4.2",
     "react-native-scripts": "1.14.0",
-    "react-test-renderer": "16.3.1"
+    "react-test-renderer": "^16.4.2"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
@@ -35,10 +40,22 @@
     "precommit": "lint-staged"
   },
   "jest": {
-    "preset": "jest-expo"
+    "preset": "react-native",
+    "testMatch": [
+      "**/?(*.)test.js?(x)"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ]
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "expo": "^27.0.1",
