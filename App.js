@@ -1,5 +1,5 @@
 import React from 'react';
-import { KeyboardAvoidingView, StyleSheet, Text } from 'react-native';
+import { KeyboardAvoidingView, StyleSheet, Text, View } from 'react-native';
 import Logo from './components/logo';
 import Calculator from './components/calculator';
 import DismissKeyboardView from './components/DismissKeyboardView';
@@ -19,10 +19,16 @@ export default class App extends React.Component {
     return (
       <DismissKeyboardView>
         <KeyboardAvoidingView style={styles.container} behavior="padding">
-          <Logo />
-          <Calculator oneRM={this.setOneRM} />
-          <Text style={styles.oneRM}>{this.state.oneRM}</Text>
-          <Text style={styles.text}>1RM Calculator</Text>
+          <View style={[styles.actionContainer, styles.logoContainer]}>
+            <Logo />
+          </View>
+          <View style={[styles.actionContainer, styles.biggerActionContainer]}>
+            <Calculator oneRM={this.setOneRM} />
+          </View>
+          <View style={[styles.actionContainer, styles.biggerActionContainer]}>
+            <Text style={styles.oneRM}>{this.state.oneRM}</Text>
+            <Text style={styles.text}>1RM Calculator</Text>
+          </View>
         </KeyboardAvoidingView>
       </DismissKeyboardView>
     );
@@ -32,9 +38,7 @@ export default class App extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#1BBC9B',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: '#1BBC9B'
   },
   text: {
     fontSize: 24,
@@ -43,7 +47,18 @@ const styles = StyleSheet.create({
   },
   oneRM: {
     fontSize: 72,
-    marginBottom: 20,
     color: 'white'
+  },
+  logoContainer: {
+    flex: 1
+  },
+  actionContainer: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 10,
+    paddingVertical: 10
+  },
+  biggerActionContainer: {
+    flex: 2
   }
 });
