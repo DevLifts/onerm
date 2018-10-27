@@ -4,13 +4,10 @@ import { View, Image } from 'react-native';
 export default class Logo extends React.Component {
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, alignSelf: 'stretch' }}>
         <Image
-          style={{
-            width: 170,
-            height: 100,
-            marginBottom: 35
-          }}
+          style={{ flex: 1, height: undefined, width: undefined }}
+          resizeMode="contain"
           source={{ uri: 'https://devlifts.io/images/dist/logo.png' }}
         />
       </View>
