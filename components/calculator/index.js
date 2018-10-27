@@ -32,45 +32,68 @@ class Calculator extends React.Component {
   // TODO - add debounce to text inputs
   render() {
     return (
-      <View
-        style={{
-          alignItems: 'center',
-          justifyContent: 'center'
-        }}
-      >
-        <TextInput
-          keyboardType="numeric"
-          onChangeText={text => this.setReps(text)}
-          placeholder="3"
-          style={styles.textInput}
-          textAlign={'center'}
-          value={this.state.reps}
-        />
-        <Text style={styles.label}>Reps</Text>
-        <TextInput
-          keyboardType="numeric"
-          onChangeText={text => this.setWeight(text)}
-          style={styles.textInput}
-          textAlign={'center'}
-          value={this.state.weight}
-        />
-        <Text style={styles.label}>Weight</Text>
+      <View style={styles.viewContainer}>
+        <View style={styles.viewContainer}>
+          <View style={styles.textInputContainer}>
+            <TextInput
+              keyboardType="numeric"
+              onChangeText={text => this.setReps(text)}
+              placeholder="3"
+              style={styles.textInput}
+              textAlign={'center'}
+              value={this.state.reps}
+            />
+          </View>
+          <View style={styles.labelContainer}>
+            <Text style={styles.label}>Reps</Text>
+          </View>
+        </View>
+        <View style={styles.viewContainer}>
+          <View style={styles.textInputContainer}>
+            <TextInput
+              keyboardType="numeric"
+              onChangeText={text => this.setWeight(text)}
+              style={styles.textInput}
+              textAlign={'center'}
+              value={this.state.weight}
+            />
+          </View>
+          <View style={styles.labelContainer}>
+            <Text style={styles.label}>Weight</Text>
+          </View>
+        </View>
       </View>
     );
   }
 }
 
 const styles = StyleSheet.create({
+  viewContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignSelf: 'stretch',
+    alignItems: 'center'
+  },
+  actionContainer: {
+    marginBottom: 5
+  },
+  textInputContainer: {
+    flex: 1,
+    alignSelf: 'stretch'
+  },
   textInput: {
+    height: '100%',
     fontSize: 24,
-    padding: 5,
-    width: 100,
-    height: 50,
     backgroundColor: 'white',
     borderRadius: 5
   },
+  labelContainer: {
+    flex: 1,
+    alignSelf: 'stretch',
+    alignItems: 'center'
+  },
   label: {
-    marginBottom: 15,
+    paddingBottom: 5,
     color: 'white'
   }
 });
