@@ -10,8 +10,10 @@ export default class App extends React.Component {
   };
 
   setOneRM = (reps, weight) => {
+    // prevent NaN from displaying by checking for falsy value
+    const oneRMInteger = Math.round(weight * (1 + reps / 30)) || 0;
     this.setState({
-      oneRM: Math.round(weight * (1 + reps / 30))
+      oneRM: oneRMInteger
     });
   };
 
