@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Keyboard, View } from 'react-native';
+import { Keyboard, SafeAreaView } from 'react-native';
 
 const handleUnhandledTouches = () => {
   Keyboard.dismiss();
@@ -8,9 +8,12 @@ const handleUnhandledTouches = () => {
 };
 
 const DismissKeyboardView = ({ children }) => (
-  <View style={{ flex: 1 }} onStartShouldSetResponder={handleUnhandledTouches}>
+  <SafeAreaView
+    style={{ flex: 1, backgroundColor: '#1BBC9B' }}
+    onStartShouldSetResponder={handleUnhandledTouches}
+  >
     {children}
-  </View>
+  </SafeAreaView>
 );
 
 DismissKeyboardView.propTypes = {
